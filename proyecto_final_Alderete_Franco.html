@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="css/proyecto_final_Alderete_Franco.css">
+  </head>
+  <body>
+    <h1>Campamento juvenil 2020</h1>
+       <h2>Inscripcion</h2>
+
+       <form action="php/proyecto_final_Alderete_Franco.php" method="POST" id="formulario">
+           <table>
+             <tr>
+               <td>Nombres:</td>
+               <td>Apellidos:</td>
+             </tr>
+             <tr>
+               <td><input type="text" name="nombre" id="nombre" required></td>
+               <td><input type="text" name="apellido" id="apellido" required></td>
+             </tr>
+             <tr>
+               <td>Edad:</td>
+               <td>Sexo:</td>
+             </tr>
+             <tr>
+               <td>
+                 <input type="number" name="edad" min="12"  required  onkeypress="return false"></td>
+               <td>
+                <select name="sexo" required>
+                  <option value="" disabled selected>Selecciona tu sexo</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </td>
+             </tr>
+             <tr>
+               <td>Ciudad:</td>
+               <td>Otro:</td>
+             </tr>
+             <tr>
+               <td>
+                <select  name="ciudad" id="ciudad" onchange="habilitar()" required>
+                    <option value="" disabled selected>Selecciona tu ciudad</option>
+                    <option value="ensenada">Ensenada</option>
+                    <option value="tijuana">Tijuana</option>
+                    <option value="mexicali">Mexicali</option>
+                    <option value="rosarito">Rosarito</option>
+                    <option value="tecate">Tecate</option>
+                    <option value="sanFelipe">San Felipe</option>
+                    <option value="otro">Otro</option>
+                </select>
+               </td>
+               <td><input type="text" name="otro"></td>
+             </tr>
+             <tr>
+               <td>Otro:</td>
+               <td>Celular: (10 dígitos)</td>
+             </tr>
+             <tr>
+               <td>
+                 <select name="otro1">
+                  <option value="no">No</option>
+                  <option value="si">Si</option>
+                </select>
+               </td>
+               <td><input type="tel" maxlength="10" name="telefono" required></td>
+             </tr>
+             <tr>
+               <td>Transporte:</td>
+                <td>Comentarios:<label class="cts">(200 caracteres)</label>
+                    <br>
+                   <div id="caracteres-restantes">200 Caracteres restantes</div>
+                </td>
+             </tr>
+             <tr>
+               <td>
+                 <select name = "transporte" disabled id="transporte">
+                  <option value="no" selected>No</option>
+                  <option value="si">Si</option>
+                </select>
+               </td>
+               <td rowspan="3"><textarea name="comentarios" rows="3" cols="15"  maxlength="200" id="comentarios"></textarea> </td>
+             </tr>
+             <tr>
+               <td>Camisa:</td>
+             </tr>
+             <tr>
+               <td>
+                 <select  name="camisa" id="camisa" onchange="mostrar()">
+                   <option value="no" selected>No</option>
+                   <option value="si">Si</option>
+                 </select>
+               </td>
+             </tr>
+            
+             <tr class="ocultar">
+               <td>Talla:</td>
+             </tr>
+             <tr class="ocultar">
+               <td>
+                 <select name="talla" id="talla">
+                        <option value="" disabled selected>Selecciona una talla</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                 
+               </td>
+             </tr>
+             <tr align="center">
+               <td colspan="2">
+               <input type="submit" name="enviar" value="Enviar" class="boton">
+               </td>
+             </tr>
+           </table>
+       </form>  
+    <script type="text/javascript" src="js/proyecto_final_Alderete_Franco.js"></script>
+  </body>
+</html>
