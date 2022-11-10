@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Formulario de registro</title>
-    <link rel="stylesheet" href="css/proyecto_final_Alderete_Franco.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <h1>Campamento juvenil 2020</h1>
        <h2>Inscripcion</h2>
 
-       <form action="php/proyecto_final_Alderete_Franco.php" method="POST" id="formulario">
+       <form action="./form.php" method="POST" id="formulario">
            <table>
              <tr>
                <td>Nombres:</td>
@@ -88,7 +88,7 @@
              </tr>
              <tr>
                <td>
-                 <select  name="camisa" id="camisa" onchange="mostrar()">
+                 <select  name="camisa" id="camisa" onchange="mostrar()" onload="mostrar()" required>
                    <option value="no" selected>No</option>
                    <option value="si">Si</option>
                  </select>
@@ -117,6 +117,6 @@
              </tr>
            </table>
        </form>  
-    <script type="text/javascript" src="js/proyecto_final_Alderete_Franco.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
   </body>
 </html>

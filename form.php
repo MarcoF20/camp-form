@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "proyectofinal";
+    $dbname = "";
 
 
     $nombre = $_POST['nombre'];
@@ -13,10 +13,18 @@
     $otro = $_POST['otro'];
     $otro1 = $_POST['otro1'];
     $telefono = $_POST['telefono'];
-    $transporte = $_POST['transporte'];
+    if(!isset($_POST['transporte'])){
+        $transporte = "NO";
+    }else{
+        $transporte = $_POST['transporte'];
+    }
     $comentarios = $_POST['comentarios'];
     $camisa = $_POST['camisa'];
-    $talla = $_POST['talla'];
+    if(!isset($_POST['talla']) || $_POST['camisa'] == "no"){
+        $talla = "n/a";
+    }else{
+        $talla = $_POST['talla'];
+    }
 
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $sql = "INSERT INTO registros (nombre, apellido, edad, sexo, ciudad, otro, otro1, telefono, transporte, camisa, talla, comentarios)
